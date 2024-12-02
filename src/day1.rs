@@ -48,7 +48,7 @@ fn part2(input: &Input) -> String {
                     return last_score;
                 }
             }
-           
+
             // calculate similarity score by counting all occurrences of left in right_list
             let mut similarity_score = 0;
             while let Some(right) = right_list.peek() {
