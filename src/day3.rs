@@ -21,7 +21,8 @@ fn part1(input: &str) -> String {
         let mut reg_number_start = 0;
         let mut reg_number_a = 0;
 
-        for (i, c) in program.char_indices().skip(offset) {
+        for (i, c) in program.as_bytes().iter().enumerate().skip(offset) {
+            let c = char::from(*c);
             match state {
                 State::Init if c == 'm' => {
                     state = State::MulCharM;
@@ -96,7 +97,8 @@ fn part2(input: &str) -> String {
         let mut reg_number_start = 0;
         let mut reg_number_a = 0;
 
-        for (i, c) in program.char_indices().skip(offset) {
+        for (i, c) in program.as_bytes().iter().enumerate().skip(offset) {
+            let c = char::from(*c);
             match state {
                 State::Init if c == 'm' => {
                     state = State::MulCharM;
